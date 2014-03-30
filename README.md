@@ -24,7 +24,7 @@ For the live screen output to work, you need fbcp.
 https://github.com/tasanakorn/rpi-fbcp
 
 You can download and compile it yourself (the instructions are quite good, but you will need to install cmake with `sudo apt-get install cmake`).
-Or you can use the binary file provided here called fbcp. It's in the /home/pi/RasPiCamcorderPiTFT directory. 
+Or, by default, you can use the binary file provided here called fbcp. It's in the /home/pi/RasPiCamcorderPiTFT directory. 
 
 
 ###Install imagemagick###
@@ -39,7 +39,7 @@ You should have git installed already, but if not...
 `sudo apt-get install git-core`
 
 
-###How to make it auto start on boot###
+###How to run picamcorder3.py automatically on boot###
 `sudo nano /etc/rc.local`
 
 Then, before the line where it says 'exit 0', insert this...
@@ -47,8 +47,7 @@ Then, before the line where it says 'exit 0', insert this...
 `/home/pi/RasPiCamcorderPiTFT/picamcorder3.py`
 
 
-###How to run it###
-From the command line...
+###How to run picamcorder3.py from the command line###
 
 `sudo python /home/pi/RasPiCamcorderPiTFT/picamcorder3.py`
 or navigate to /home/pi/RasPiCamcorderPiTFT and type...
