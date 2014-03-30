@@ -13,12 +13,13 @@ I'm also using the Pimoroni http://shop.pimoroni.com/products/pitft-pibow design
 http://learn.adafruit.com/adafruit-pitft-28-inch-resistive-touchscreen-display-raspberry-pi/
 You will need four slim buttons to use this script.
 
-But don't set up a power off button. We need them all, and we have one of those already. Button 2 acts as stop if pressed momentarily, close program is pressed for more than 1.25 seconds and shutdown Pi if pressed fr >3seconds.
+But don't set up a power off button. We need them all, and we have one of those already. 
+Button 2 acts as 'stop' if pressed momentarily, 'close program' if pressed for more than 1.25 seconds and 'shutdown Pi' if pressed for >3 seconds.
 
 
 ###Install fbcp###
 
-For the live screen output to work, you need to install fbcp.
+For the live screen output to work, you need fbcp.
 
 https://github.com/tasanakorn/rpi-fbcp
 
@@ -31,8 +32,8 @@ You need this for the resizing of preview stills to 320x240
 `sudo apt-get install imagemagick`
 
 ###How To Intall This Software###
-```cd ~
-git clone https://github.com/raspitv/RasPiCamcorderPiTFT```
+`cd ~`
+`git clone https://github.com/raspitv/RasPiCamcorderPiTFT`
 
 You should have git installed already, but if not...
 `sudo apt-get install git-core`
@@ -41,16 +42,17 @@ You should have git installed already, but if not...
 ###How to make it auto start on boot###
 `sudo nano /etc/rc.local`
 
-Then, before the line where it says exit 0, insert this...
+Then, before the line where it says 'exit 0', insert this...
 
-`/home/pi/RasPiCamcorderPiTFT/raspicamcorder3.py`
+`/home/pi/RasPiCamcorderPiTFT/picamcorder3.py`
 
 
 ###How to run it###
 From the command line...
-`sudo python /home/pi/RasPiCamcorderPiTFT/raspicamcorder3.py`
+
+`sudo python /home/pi/RasPiCamcorderPiTFT/picamcorder3.py`
 or navigate to /home/pi/RasPiCamcorderPiTFT and type...
-`sudo python raspicamcorder3.py`
+`sudo python picamcorder3.py`
 
 The sudo is needed because we're using GPIO.
 
