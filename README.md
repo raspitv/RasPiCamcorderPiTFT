@@ -23,7 +23,7 @@ For the live screen output to work, you need to install fbcp.
 https://github.com/tasanakorn/rpi-fbcp
 
 You can download and compile it yourself (the instructions are quite good, but you will need to install cmake with `sudo apt-get install cmake`).
-Or you can use the binary file provided here called fbcp. Make sure it's in the /home/pi directory. 
+Or you can use the binary file provided here called fbcp. It's in the /home/pi/RasPiCamcorderPiTFT directory. 
 
 
 ###Install imagemagick###
