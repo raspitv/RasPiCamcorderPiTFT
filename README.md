@@ -54,7 +54,7 @@ But if you don't want to do that, just ignore this and stick with the one provid
 
 ###Install imagemagick###
 You need to install imagemagick or you won't be able to view the photos you just took.
-The python script will probably crash if you don't install or disable that part.
+The python script will probably crash if you don't install imagemagick (or disable that part).
 
 It's used to resize stills to 320x240 for preview (but it leaves the originals intact).
 `sudo apt-get install imagemagick`
