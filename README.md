@@ -10,33 +10,52 @@ This sofware is intended to be used with a Raspberry Pi, Pi camera and the Adafr
 I'm also using the Pimoroni http://shop.pimoroni.com/products/pitft-pibow designed to fit the PiTFT.
 
 ###Assemble and install your PiTFT ###
+Follow the excellent instructions here...
+
 http://learn.adafruit.com/adafruit-pitft-28-inch-resistive-touchscreen-display-raspberry-pi/
-You will need four slim buttons to use this script.
+You will need four slim buttons on the PCB to use this script.
 
-But don't set up a power off button. We need them all, and we have one of those already. 
-Button 2 acts as 'stop' if pressed momentarily, 'close program' if pressed for more than 1.25 seconds and 'shutdown Pi' if pressed for >3 seconds.
+When it comes to configuring the drivers, don't set up a 'power off button'. 
+(It's one of the extras on the last page of setup instructions.)
 
+We need to use all four buttons for our script, and it already includes a power off button.
 
-###Install fbcp###
+Button 1: Record video 
 
-For the live screen output to work, you need fbcp.
+Button 2: 'stop' if pressed momentarily, 'close program' if pressed for more than 1.25 seconds and 'shutdown Pi' if pressed for >3 seconds.
 
-https://github.com/tasanakorn/rpi-fbcp
+Button 3: Toggle screen on and off to save power
 
-You can download and compile it yourself (the instructions are quite good, but you will need to install cmake with `sudo apt-get install cmake`).
-Or, by default, you can use the binary file provided here called fbcp. It's in the /home/pi/RasPiCamcorderPiTFT directory. 
+Button 4; Take a still photograph and show it on the screen for 10s
 
-
-###Install imagemagick###
-You need this for the resizing of preview stills to 320x240
-`sudo apt-get install imagemagick`
 
 ###How To Intall This Software###
 `cd ~`
+
 `git clone https://github.com/raspitv/RasPiCamcorderPiTFT`
 
 You should have git installed already, but if not...
 `sudo apt-get install git-core`
+
+
+###Install fbcp, if you prefer to compile your own###
+
+For the live screen output to work, you need fbcp. I have included the binary 
+fbcp in the /RasPiCamcorderPiTFT directory. But some people will prefer to look at the
+source and compile it themselves. You can do that too. It's at...
+
+https://github.com/tasanakorn/rpi-fbcp
+
+The instructions are quite good, but you will need to install cmake with 
+`sudo apt-get install cmake`).
+
+But if you don't want to do that, just ignore this and stick with the one provided.
+
+
+###Install imagemagick###
+You need to install this or you won't be able to view the photos you just took.
+It's used to resize stills to 320x240 for preview (but it leaves the originals intact).
+`sudo apt-get install imagemagick`
 
 
 ###How to run picamcorder3.py automatically on boot###
@@ -55,4 +74,15 @@ or navigate to /home/pi/RasPiCamcorderPiTFT and type...
 
 The sudo is needed because we're using GPIO.
 
+### Where are my photos and video files stored?###
 
+All your photo and video files will be in /home/pi
+
+Photos will be numbered sequentially up from 00001.jpg
+Videos will be called video00001.h264 onwards
+
+Numbering can be reset by changing or deleting the files...
+
+/home/pi/RasPiCamcorderPiTFT/vid_rec_num.txt
+
+/home/pi/RasPiCamcorderPiTFT/photo_rec_num.txt
