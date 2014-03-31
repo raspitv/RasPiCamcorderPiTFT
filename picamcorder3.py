@@ -1,9 +1,9 @@
 #!/usr/bin/env python2.7
 # script by Alex Eames http://RasPi.tv
+# blog article here describes the hardware http://raspi.tv/?p=6282
 # Updated version for use with Adafruit PiTFT & fbcp
 # needs RPi.GPIO 0.5.2 or later
 # also needs fbcp from https://github.com/tasanakorn/rpi-fbcp
-# needs /home/pi/RasPiCamcorder/raspitv320x240.jpg
 # and imagemagick
 # set up PiTFT as at 
 # http://learn.adafruit.com/adafruit-pitft-28-inch-resistive-touchscreen-display-raspberry-pi/
