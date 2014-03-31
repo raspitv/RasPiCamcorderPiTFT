@@ -1,9 +1,9 @@
-RasPiCamcorderPiTFT
-===================
+#RasPiCamcorderPiTFT#
 
-RasPiCamcorder3 the PiTFT version
+###RasPiCamcorder3 the PiTFT version###
 
 This sofware is intended to be used with a Raspberry Pi, Pi camera and the Adafruit PiTFT screen with four buttons attached.
+See my blog article here http://raspi.tv/?p=6282
 
 ![RasPiCamcorder Photo](http://raspi.tv/wp-content/uploads/2014/03/DSC_0604_700.jpg "RasPiCamcorder 3")
 
@@ -20,13 +20,13 @@ When it comes to configuring the drivers, don't set up a 'power off button'.
 
 We need to use all four buttons for our script, and it already includes a power off button.
 
-Button 1: Record video 
+**Button 1:** Record video 
 
-Button 2: 'stop' if pressed momentarily, 'close program' if pressed for more than 1.25 seconds and 'shutdown Pi' if pressed for >3 seconds.
+**Button 2:** 'Stop' if pressed momentarily, 'Close program' if pressed for more than 1.25 seconds and 'Shutdown Pi' if pressed for >3 seconds.
 
-Button 3: Toggle screen on and off to save power
+**Button 3:** Toggle screen on and off to save power
 
-Button 4; Take a still photograph and show it on the screen for 10s
+**Button 4:** Take a still photograph and show it on the screen for 10s
 
 
 ###How To Intall This Software###
@@ -46,14 +46,16 @@ source and compile it themselves. You can do that too. It's at...
 
 https://github.com/tasanakorn/rpi-fbcp
 
-The instructions are quite good, but you will need to install cmake with 
-`sudo apt-get install cmake`).
+The instructions are quite good, but you may need to install cmake with 
+`sudo apt-get install cmake`
 
 But if you don't want to do that, just ignore this and stick with the one provided.
 
 
 ###Install imagemagick###
-You need to install this or you won't be able to view the photos you just took.
+You need to install imagemagick or you won't be able to view the photos you just took.
+The python script will probably crash if you don't install or disable that part.
+
 It's used to resize stills to 320x240 for preview (but it leaves the originals intact).
 `sudo apt-get install imagemagick`
 
@@ -64,6 +66,9 @@ It's used to resize stills to 320x240 for preview (but it leaves the originals i
 Then, before the line where it says 'exit 0', insert this...
 
 `/home/pi/RasPiCamcorderPiTFT/picamcorder3.py`
+
+You will also need to set up the Pi so that it boots to console on the PiTFT. [How to do that is on this page.](
+http://learn.adafruit.com/adafruit-pitft-28-inch-resistive-touchscreen-display-raspberry-pi/using-the-console)
 
 
 ###How to run picamcorder3.py from the command line###
